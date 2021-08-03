@@ -32,9 +32,13 @@ var options = {
 
 return new Promise( ( resolve, reject ) => {
 
+console.log("::: 1")
+
         request(options, function (error, response) {
         console.log(error)
 	if (error) {
+
+console.log("::: 2")
             const response = {
                 messageID: 419,
                 messageReason: "Error" + error,
@@ -43,6 +47,7 @@ return new Promise( ( resolve, reject ) => {
             resolve(response)
         }
 	else {
+console.log("::: 3")
             const response = {
                 messageID: 200,
                 messageReason: response.body,
@@ -53,5 +58,7 @@ return new Promise( ( resolve, reject ) => {
 
        })
     })
+
+console.log("::: 4")
 }
 
